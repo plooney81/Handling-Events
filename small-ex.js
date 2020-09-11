@@ -10,25 +10,25 @@
 
 // renderButton('First one')
 
-function whichButton(e){
-    e.preventDefault();
-    console.log(e.button)
-    if (e.button  === 0){
-        console.log("You left clicked");
-    }else if (e.button  === 1){
-        console.log("You middle clicked");
-    }else if (e.button  === 2){
-        console.log("You right clicked");
-    }
-}
+// function whichButton(e){
+//     e.preventDefault();
+//     console.log(e.button)
+//     if (e.button  === 0){
+//         console.log("You left clicked");
+//     }else if (e.button  === 1){
+//         console.log("You middle clicked");
+//     }else if (e.button  === 2){
+//         console.log("You right clicked");
+//     }
+// }
 
 
-const but = document.querySelector('button');
+// const but = document.querySelector('button');
 
-but.addEventListener('click', whichButton);
-but.addEventListener('contextmenu', whichButton);
+// but.addEventListener('click', whichButton);
+// but.addEventListener('contextmenu', whichButton);
 
-window.addEventListener('resize', ()=>{
-    console.log('You change the size of the window!')
-})
+// window.addEventListener('resize', ()=>{
+//     console.log('You change the size of the window!')
+// })
 
