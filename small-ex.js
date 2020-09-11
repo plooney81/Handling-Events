@@ -1,6 +1,6 @@
 // function renderButton(buttonName){
 //     let anotherButton = '';
-//     const content = document.querySelector('body');
+//     const content = document.querySelector('.content');
     
 //     anotherButton += `
 //         <button class="${buttonName}" type="button">Button</button>
@@ -31,3 +31,4 @@ but.addEventListener('contextmenu', whichButton);
 window.addEventListener('resize', ()=>{
     console.log('You change the size of the window!')
 })
+
