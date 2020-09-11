@@ -7,9 +7,11 @@ function renderButton(button){
 }
 
 function newButton(buttonName) {
+    console.log('Yo')
     let content = document.querySelector('.content');
+    
 
-    content.innerHTML += renderButton(buttonName)
+    content.innerHTML += renderButton(buttonName);
 }
 
 
@@ -28,15 +30,23 @@ function inputForm(){
     content.innerHTML += renderInput();
 }
 
-function addToList(){
-    let buttonName = document.querySelector('input').value;
-    console.log(buttonName);
-
-    newButton(buttonName);
+function clearInput(){
+    document.querySelector('input').value = '';
 }
+
+// function addToList(){
+//     let buttonName = document.querySelector('input').value;
+//     document.querySelector('input').value = '';
+//     console.log(buttonName);
+
+//     newButton(buttonName);
+// }
 
 inputForm();
 newButton('Add');
 
 const addBut = document.querySelector('#Add');
-addBut.addEventListener('click', addToList);
+addBut.addEventListener('click', ()=>{
+    newButton(document.querySelector('input').value);
+    clearInput();
+});
