@@ -85,19 +85,16 @@ function getResults(array){
                 break;
         }
     }
-    return mathStuff;
+    // to round to 4 decimal places, we do math.round(mathstuff * 10^4) / 10^4
+    // to round to 5 decimal places, we do math.round(mathstuff * 10^5) / 10^5
+    // we do this because math.round() will only round a floating point value to the nearest integer value. 
+    return Math.round(mathStuff * Math.pow(10, 4)) / Math.pow(10, 4);
 
 }
 
 
-const input = document.querySelector('#input'), // input/output button
- numbers = document.querySelectorAll('.numbers div'), // number buttons
- operators = document.querySelectorAll('.operators div'), // operator buttons
- result = document.querySelector('#result'), // equal button
- clear = document.querySelector('#clear'); // clear button
+const input = document.querySelector('#input') // input/output button
 
-
-let resultDisplayed = false; // flag to keep an eye on what output is displayed
 let captureNumbersEntered = [];
 
 
