@@ -1,15 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Events</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Calculator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="content">
-
+<div class="wrapper">
+    <div class="calculator">
+        <div class="input" id="input"></div>
+        <div class="buttons">
+            <div class="operators">
+                <div class="op">+</div>
+                <div class="op">-</div>
+                <div class="op">*</div>
+                <div class="op">/</div>
+            </div>
+            <div class="leftPanel">
+                <div class="numbers">
+                    <div class="numb">7</div>
+                    <div class="numb">8</div>
+                    <div class="numb">9</div>
+                </div>
+                <div class="numbers">
+                    <div class="numb">4</div>
+                    <div class="numb">5</div>
+                    <div class="numb">6</div>
+                </div>
+                <div class="numbers">
+                    <div class="numb">1</div>
+                    <div class="numb">2</div>
+                    <div class="numb">3</div>
+                </div>
+                <div class="numbers">
+                    <div class="numb">0</div>
+                    <div class="numb">.</div>
+                    <div id="clear">C</div>
+                </div>
+            </div>
+            <div class="equal" id="result">=</div>
+        </div>
     </div>
+    <p class="u-center">
+        Originally forked from: <a href="https://codepen.io/lalwanivikas/pen/eZxjqo">https://codepen.io/lalwanivikas/pen/eZxjqo</a>
+    </p>
+</div>
+<script src="./calculator.js"></script>
 </body>
-<script src="./small-ex.js"></script>
-<script src="./medium-ex.js"></script>
 </html>
