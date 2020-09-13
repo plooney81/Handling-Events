@@ -1,28 +1,14 @@
-// function renderButton(button){
-//     return `
-//         <div>
-//             <button type="button" id="${button}">${button}</button>
-//         </div>
-//     `
-// }
-
 function newButton(buttonName) {
     let content = document.querySelector('.content');
-
-    newStuff = `<button type="button" id="${buttonName}">${buttonName}</button>`
+    let newStuff = '';
     
+    if (buttonName === "add"){
+        newStuff = `<button type="button" id="${buttonName}">Add Item To List</button>`
+    }else{
+        newStuff = `<button type="button" id="${buttonName}" class="added">${buttonName}</button>`
+    }
     content.innerHTML += '<div>' + newStuff + '</div>';
 }
-
-
-// function renderInput(){
-
-//     return `
-//         <form>
-//             <input type="text">
-//         </form>
-//     `
-// }
 
 function inputForm(){
     let content = document.querySelector('.content');
@@ -47,34 +33,15 @@ function deleteButton(buttonName){
     buttonToDelete.remove();
 }
 
-
-// function addToList(){
-//     let buttonName = document.querySelector('input').value;
-//     document.querySelector('input').value = '';
-//     console.log(buttonName);
-
-//     newButton(buttonName);
-// }
-
+newButton('add');
 inputForm();
-// deleteButton('add');
 
-// newButton('Pete');
-// newButton('David');
-// newButton('Shannon');
-// newButton('Beth');
-
-// const addBut = document.querySelector('#add');
-// addBut.addEventListener('click', ()=>{
-//     newButton(document.querySelector('input').value);
-//     clearInput();
-// });
-
-
-// addBut.addEventListener('click', alertFunct);
-
-// window.addEventListener('DOMContentLoaded', function(){
-//     const addBut = document.querySelector('button');
-//     addBut.addEventListener('click', newButton(document.querySelector('input').value));
-// });
-
+// the picks up every click that is recieved and then looks at the element that was clicked (the "target") and decides what to do based on their class and ID
+document.addEventListener('click', function(e){
+    if(e.target.getAttribute('class') == "added"){
+        deleteButton(e.target.getAttribute('id'))
+    }else if(e.target.getAttribute('id') == "add"){
+        newButton(document.querySelector('input').value)
+        clearInput();
+    }
+  })
