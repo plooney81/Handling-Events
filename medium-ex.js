@@ -41,6 +41,12 @@ function clearInput(){
     document.querySelector('input').value = '';
 }
 
+function deleteButton(buttonName){    
+    let buttonToDelete = document.querySelector(`#${buttonName}`);
+
+    buttonToDelete.remove();
+}
+
 
 // function addToList(){
 //     let buttonName = document.querySelector('input').value;
@@ -51,6 +57,7 @@ function clearInput(){
 // }
 
 inputForm();
+// deleteButton('add');
 
 // newButton('Pete');
 // newButton('David');
