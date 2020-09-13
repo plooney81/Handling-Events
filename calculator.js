@@ -37,7 +37,7 @@ function getResults(array){
     let operatorArray = [];
     let numberArray = [];
     for (let index = 0; index < array.length; index++){
-        if(array[index] == "+" || array[index] == "-" || array[index] == "*" || array[index] == "*"){
+        if(array[index] == "+" || array[index] == "-" || array[index] == "*" || array[index] == "/"){
             operatorArray.push(array[index]);
             numberArray.push(Number(newString));
             newString = '';
@@ -46,6 +46,9 @@ function getResults(array){
         }
     }
     numberArray.push(Number(newString));
+
+    console.log(operatorArray);
+    console.log(numberArray);
 
     let mathStuff = 0;
 
@@ -103,7 +106,7 @@ document.addEventListener('click', function(e){
     if(e.target.getAttribute('class') == "op"){
         if (captureNumbersEntered.length === 0){
             alert('Cant start with an operator!');
-        }else if (captureNumbersEntered[captureNumbersEntered.length - 1] == "+" || captureNumbersEntered[captureNumbersEntered.length - 1] == "-" || captureNumbersEntered[captureNumbersEntered.length - 1] == "*" || captureNumbersEntered[captureNumbersEntered.length - 1] == "*"){
+        }else if (captureNumbersEntered[captureNumbersEntered.length - 1] == "+" || captureNumbersEntered[captureNumbersEntered.length - 1] == "-" || captureNumbersEntered[captureNumbersEntered.length - 1] == "*" || captureNumbersEntered[captureNumbersEntered.length - 1] == "/"){
            alert('Previous entry was an operator!');
         }else{
             captureNumbersEntered.push(e.target.innerHTML);
@@ -115,13 +118,13 @@ document.addEventListener('click', function(e){
         input.innerHTML = newResult;
         captureNumbersEntered = [];
         captureNumbersEntered.push(newResult.toString());
-        console.log(captureNumbersEntered);
+        // console.log(captureNumbersEntered);
     }else if(e.target.getAttribute('id') == "clear"){
         captureNumbersEntered = [];
         input.innerHTML = '';
     }else if(e.target.getAttribute('class') == "numb"){
         captureNumbersEntered.push(e.target.innerHTML);
-        if (input.innerHTML == "+" || input.innerHTML == "-" || input.innerHTML == "*" || input.innerHTML == "*"){
+        if (input.innerHTML == "+" || input.innerHTML == "-" || input.innerHTML == "*" || input.innerHTML == "/"){
             input.innerHTML = '';
             input.innerHTML = e.target.innerHTML;
         }else{
